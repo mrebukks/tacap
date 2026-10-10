@@ -1,0 +1,1972 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apex Structure Ltd | Civil & Structural Engineering</title>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet" />
+    <!-- FontAwesome Icons for Construction & Engineering -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+      :root {
+        /* Primary Palette */
+        --primary-dark: #0f172a; /* Deep Slate Navy */
+        --primary-surface: #1e293b; /* Structural Charcoal */
+        --accent-amber: #f59e0b; /* Safety Amber / Gold */
+        --accent-amber-hover: #d97706;
+        --accent-blue: #2563eb; /* Engineering Blue */
+
+        /* Neutral Colors */
+        --bg-main: #f8fafc; /* Cool Ice White */
+        --bg-card: #ffffff;
+        --border-color: #e2e8f0;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --text-light: #f8fafc;
+
+        /* Shadows & Effects */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgba(15, 23, 42, 0.08),
+          0 2px 4px -1px rgba(15, 23, 42, 0.04);
+        --shadow-lg:
+          0 10px 25px -5px rgba(15, 23, 42, 0.12),
+          0 8px 10px -6px rgba(15, 23, 42, 0.04);
+        --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.25);
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 16px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Space Grotesk", "Inter", sans-serif;
+        color: var(--primary-dark);
+        line-height: 1.2;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Helper Utilities */
+      .container {
+        width: 90%;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .section-padding {
+        padding: 90px 0;
+      }
+
+      .badge {
+        display: inline-block;
+        background-color: rgba(245, 158, 11, 0.15);
+        color: #b45309;
+        font-size: 0.85rem;
+        font-weight: 700;
+        padding: 6px 14px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        border: 1px solid rgba(245, 158, 11, 0.3);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 55px auto;
+      }
+
+      .section-header h2 {
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .section-header p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: var(--radius-md);
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        border: 2px solid transparent;
+      }
+
+      .btn-primary {
+        background-color: var(--accent-amber);
+        color: var(--primary-dark);
+        box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--accent-amber-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--text-light);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: var(--text-light);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary-dark);
+        color: var(--text-light);
+      }
+
+      .top-bar {
+        background-color: #090d16;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .top-info {
+        display: flex;
+        gap: 20px;
+      }
+
+      .top-info item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .top-info i {
+        color: var(--accent-amber);
+      }
+
+      .top-cert {
+        color: #94a3b8;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .header-nav {
+        position: sticky;
+        top: 0;
+        background-color: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: var(--transition);
+      }
+
+      .header-nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 15px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-light);
+      }
+
+      .logo i {
+        color: var(--accent-amber);
+        font-size: 1.7rem;
+      }
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .nav-link {
+        color: #cbd5e1;
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        padding: 5px 0;
+        transition: var(--transition);
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--accent-amber);
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: var(--accent-amber);
+        transition: var(--transition);
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .mobile-toggle {
+        display: none;
+        color: var(--text-light);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .hero {
+        position: relative;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.92) 0%,
+            rgba(30, 41, 59, 0.85) 100%
+          ),
+          url("https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1920&q=80")
+            center/cover no-repeat;
+        padding: 120px 0 140px 0;
+        color: var(--text-light);
+        overflow: hidden;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+
+      .hero h1 span {
+        color: var(--accent-amber);
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: #cbd5e1;
+        margin-bottom: 35px;
+        max-width: 680px;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      /* Key Metrics Floating Grid */
+      .metrics-wrapper {
+        margin-top: -60px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        background: var(--bg-card);
+        padding: 30px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border-color);
+      }
+
+      .metric-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 15px;
+        border-right: 1px solid var(--border-color);
+      }
+
+      .metric-card:last-child {
+        border-right: none;
+      }
+
+      .metric-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(245, 158, 11, 0.12);
+        color: var(--accent-amber);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        flex-shrink: 0;
+      }
+
+      .metric-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary-dark);
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .metric-label {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .about-section {
+        background-color: var(--bg-main);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 60px;
+      }
+
+      .about-image {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .about-image:hover img {
+        transform: scale(1.03);
+      }
+
+      .about-experience-badge {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: var(--primary-dark);
+        color: var(--text-light);
+        padding: 20px 25px;
+        border-radius: var(--radius-md);
+        border-left: 4px solid var(--accent-amber);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .about-experience-badge .years {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--accent-amber);
+      }
+
+      .about-text h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+      }
+
+      /* Values Cards Grid */
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .value-card {
+        background: var(--bg-card);
+        padding: 30px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+      }
+
+      .value-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+        border-color: rgba(245, 158, 11, 0.4);
+      }
+
+      .value-icon {
+        font-size: 2rem;
+        color: var(--accent-amber);
+        margin-bottom: 18px;
+      }
+
+      .value-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+      }
+
+      .value-card p {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+      }
+
+      .services-section {
+        background-color: #ffffff;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .service-card {
+        background-color: var(--bg-main);
+        padding: 35px 30px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: transparent;
+        transition: var(--transition);
+      }
+
+      .service-card:hover {
+        background-color: var(--bg-card);
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .service-card:hover::before {
+        background: var(--accent-amber);
+      }
+
+      .service-icon-wrapper {
+        width: 55px;
+        height: 55px;
+        background: var(--primary-dark);
+        color: var(--accent-amber);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 22px;
+        transition: var(--transition);
+      }
+
+      .service-card:hover .service-icon-wrapper {
+        background: var(--accent-amber);
+        color: var(--primary-dark);
+      }
+
+      .service-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+
+      .service-link {
+        font-weight: 600;
+        color: var(--primary-dark);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+
+      .service-card:hover .service-link {
+        color: var(--accent-amber-hover);
+      }
+
+      .projects-section {
+        background-color: var(--bg-main);
+      }
+
+      .filter-bar {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 45px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 10px 22px;
+        border-radius: 50px;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        color: var(--text-muted);
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background-color: var(--primary-dark);
+        color: var(--accent-amber);
+        border-color: var(--primary-dark);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .project-card {
+        background-color: var(--bg-card);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card.hide {
+        display: none;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .project-image-box {
+        position: relative;
+        height: 230px;
+        overflow: hidden;
+      }
+
+      .project-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .project-card:hover .project-image-box img {
+        transform: scale(1.08);
+      }
+
+      .project-category-tag {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(4px);
+        color: var(--accent-amber);
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 4px;
+        text-transform: uppercase;
+      }
+
+      .project-details {
+        padding: 22px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-details h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+
+      .project-location {
+        color: var(--text-muted);
+        font-size: 0.88rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .project-stats {
+        margin-top: auto;
+        padding-top: 15px;
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .project-stats strong {
+        color: var(--primary-dark);
+      }
+
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(5px);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        padding: 20px;
+      }
+
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-box {
+        background: var(--bg-card);
+        width: 100%;
+        max-width: 700px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        transform: translateY(20px);
+        transition: var(--transition);
+      }
+
+      .modal-overlay.active .modal-box {
+        transform: translateY(0);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        background: rgba(15, 23, 42, 0.6);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        border: none;
+        transition: var(--transition);
+      }
+
+      .modal-close:hover {
+        background: var(--accent-amber);
+        color: var(--primary-dark);
+      }
+
+      .modal-body {
+        padding: 30px;
+      }
+
+      .modal-body img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: var(--radius-md);
+        margin-bottom: 20px;
+      }
+
+      .process-section {
+        background-color: var(--primary-dark);
+        color: var(--text-light);
+      }
+
+      .process-section .section-header h2 {
+        color: #ffffff;
+      }
+
+      .process-section .section-header p {
+        color: #94a3b8;
+      }
+
+      .process-timeline {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        position: relative;
+      }
+
+      .process-card {
+        background-color: var(--primary-surface);
+        padding: 30px 20px;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .process-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent-amber);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .step-number {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: rgba(245, 158, 11, 0.3);
+        line-height: 1;
+        margin-bottom: 15px;
+      }
+
+      .process-card:hover .step-number {
+        color: var(--accent-amber);
+      }
+
+      .process-card h3 {
+        color: #ffffff;
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+      }
+
+      .process-card p {
+        color: #94a3b8;
+        font-size: 0.88rem;
+      }
+
+      .rfp-section {
+        background-color: #ffffff;
+      }
+
+      .rfp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .rfp-info h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+      }
+
+      .rfp-info p {
+        color: var(--text-muted);
+        margin-bottom: 30px;
+        font-size: 1.05rem;
+      }
+
+      .info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .info-item {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+      }
+
+      .info-item i {
+        width: 42px;
+        height: 42px;
+        background: rgba(245, 158, 11, 0.12);
+        color: var(--accent-amber);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      .info-item h4 {
+        font-size: 1.05rem;
+        margin-bottom: 3px;
+      }
+
+      .info-item p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+
+      .rfp-form-card {
+        background-color: var(--bg-main);
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-md);
+      }
+
+      .form-group-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--primary-dark);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 13px 16px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-card);
+        font-family: inherit;
+        font-size: 0.95rem;
+        color: var(--text-main);
+        transition: var(--transition);
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--accent-amber);
+        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+      }
+
+      textarea.form-control {
+        resize: vertical;
+        min-height: 110px;
+      }
+
+      .footer {
+        background-color: #090d16;
+        color: #94a3b8;
+        padding-top: 80px;
+        font-size: 0.92rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 40px;
+        padding-bottom: 60px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .footer-brand .logo {
+        margin-bottom: 20px;
+      }
+
+      .footer-brand p {
+        margin-bottom: 25px;
+        line-height: 1.7;
+      }
+
+      .footer-title {
+        color: #ffffff;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-links a {
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--accent-amber);
+        padding-left: 5px;
+      }
+
+      .compliance-box {
+        background: rgba(255, 255, 255, 0.04);
+        padding: 18px;
+        border-radius: var(--radius-md);
+        border-left: 3px solid var(--accent-amber);
+      }
+
+      .compliance-box p {
+        font-size: 0.85rem;
+        color: #cbd5e1;
+        margin-top: 6px;
+      }
+
+      .footer-bottom {
+        padding: 25px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 0.85rem;
+      }
+
+      /* Notification Toast */
+      .toast-msg {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: var(--primary-dark);
+        color: var(--text-light);
+        padding: 16px 24px;
+        border-radius: var(--radius-md);
+        border-left: 4px solid var(--accent-amber);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(100px);
+        opacity: 0;
+        transition: var(--transition);
+        z-index: 3000;
+      }
+
+      .toast-msg.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      @media (max-width: 1024px) {
+        .metrics-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .services-grid,
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .process-timeline {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .top-bar {
+          display: none;
+        }
+        .mobile-toggle {
+          display: block;
+        }
+        .nav-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: var(--primary-dark);
+          flex-direction: column;
+          padding: 20px;
+          gap: 18px;
+          box-shadow: var(--shadow-lg);
+          display: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-menu.active {
+          display: flex;
+        }
+        .hero h1 {
+          font-size: 2.4rem;
+        }
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+        .metric-card {
+          border-right: none;
+          border-bottom: 1px solid var(--border-color);
+          padding-bottom: 15px;
+        }
+        .metric-card:last-child {
+          border-bottom: none;
+        }
+        .about-grid,
+        .rfp-grid {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+        .values-grid,
+        .services-grid,
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        .process-timeline {
+          grid-template-columns: 1fr;
+        }
+        .form-group-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. TOP BAR -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-info">
+          <span class="top-info-item"
+            ><i class="fa-solid fa-phone"></i> +234 (0) 800 APEX BUILD</span
+          >
+          <span class="top-info-item"
+            ><i class="fa-solid fa-envelope"></i>
+            tenders@apexstructure.com</span
+          >
+          <span class="top-info-item"
+            ><i class="fa-solid fa-location-dot"></i> Plot 452, Central Business
+            District, Abuja</span
+          >
+        </div>
+        <div class="top-cert">
+          <i class="fa-solid fa-certificate"></i> COREN & NSE Registered
+          Engineering Practice
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="header-nav">
+      <div class="container">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-cubes-stacked"></i>
+          TACAP
+          <p style="color: red; size: 4px">Engineering solutions ltd</p>
+        </a>
+
+        <div class="mobile-toggle" id="mobileToggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li>
+            <a
+              href="#rfp"
+              class="btn btn-primary"
+              style="padding: 8px 18px; font-size: 0.88rem"
+              >Request RFP</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <span class="badge"
+            ><i class="fa-solid fa-shield-halved"></i> ISO 9001:2015 Certified
+            Structural Engineering</span
+          >
+          <h1>
+            Engineered for <span>Structural Excellence</span> & Durability.
+          </h1>
+          <p>
+            Apex Structure Ltd provides turnkey civil construction, high-rise
+            structural engineering, and heavy infrastructure developments
+            delivered with zero safety compromises.
+          </p>
+          <div class="hero-cta">
+            <a href="#rfp" class="btn btn-primary"
+              ><i class="fa-solid fa-file-contract"></i> Request a Proposal</a
+            >
+            <a href="#projects" class="btn btn-secondary"
+              ><i class="fa-solid fa-building-circle-check"></i> View Our
+              Work</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY METRICS OVERLAY -->
+    <div class="metrics-wrapper">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-city"></i></div>
+            <div>
+              <div class="metric-number">150+</div>
+              <div class="metric-label">Completed Major Projects</div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">
+              <i class="fa-solid fa-helmet-safety"></i>
+            </div>
+            <div>
+              <div class="metric-number">100%</div>
+              <div class="metric-label">Safety & HSE Record</div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon"><i class="fa-solid fa-award"></i></div>
+            <div>
+              <div class="metric-number">15+</div>
+              <div class="metric-label">Years Industry Leadership</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. ABOUT US / CORE VALUES -->
+    <section class="about-section section-padding" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+              alt="Architectural Engineering Team" />
+            <div class="about-experience-badge">
+              <div class="years">15+</div>
+              <div
+                style="
+                  font-size: 0.85rem;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  color: #94a3b8;
+                ">
+                Years Industry Rigor
+              </div>
+            </div>
+          </div>
+          <div class="about-text">
+            <span class="badge">Who We Are</span>
+            <h2>Constructing Enduring Landmarks Across West Africa</h2>
+            <p>
+              Founded in 2011, Apex Structure Ltd has built a reputation as a
+              premier civil and structural engineering powerhouse. We combine
+              rigorous finite-element load calculations with state-of-the-art
+              construction management techniques.
+            </p>
+            <p>
+              Our multidisciplinary team of chartered engineers, project
+              managers, and HSE officers ensure every structural project—from
+              corporate towers to highway networks—meets international safety
+              codes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Core Values Grid -->
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fa-solid fa-drafting-compass"></i>
+            </div>
+            <h3>Engineering Integrity</h3>
+            <p>
+              We perform rigorous soil analyses and structural stress modeling
+              to ensure 100-year design resilience.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <h3>On-Time Delivery</h3>
+            <p>
+              Utilizing Critical Path Method (CPM) scheduling to ensure zero
+              delays on tender commitments.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fa-solid fa-person-shelter"></i>
+            </div>
+            <h3>Strict HSE Compliance</h3>
+            <p>
+              Zero-harm policy across all site operations with OSHA and ISO
+              environmental management compliance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICES GRID -->
+    <section class="services-section section-padding" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Specialized Capabilities</span>
+          <h2>Comprehensive Engineering & Construction Services</h2>
+          <p>
+            From site survey to commissioning, we deliver full-lifecycle
+            engineering services for public and private sector clients.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-bridge-water"></i>
+            </div>
+            <h3>Civil & Structural Engineering</h3>
+            <p>
+              Detailed design calculations, foundation engineering, reinforced
+              concrete, and heavy steel framing for modern builds.
+            </p>
+            <a href="#rfp" class="service-link"
+              >Consult Engineers <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h3>Commercial Construction</h3>
+            <p>
+              Turnkey execution of corporate office headquarters, luxury
+              high-rises, shopping complexes, and institutional facilities.
+            </p>
+            <a href="#rfp" class="service-link"
+              >Request RFP <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+            <h3>Structural Audits & Retrofitting</h3>
+            <p>
+              Non-destructive ultrasonic testing, structural integrity audits,
+              carbon fiber wrapping, and seismic retrofitting.
+            </p>
+            <a href="#rfp" class="service-link"
+              >Book Audit <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <h3>MEP Systems Integration</h3>
+            <p>
+              Mechanical, Electrical, and Plumbing engineering including HVAC,
+              power distribution, and automated fire suppression systems.
+            </p>
+            <a href="#rfp" class="service-link"
+              >Inquire MEP <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3>EPC & Project Management</h3>
+            <p>
+              End-to-end Engineering, Procurement, and Construction management,
+              quality assurance, and site supervision.
+            </p>
+            <a href="#rfp" class="service-link"
+              >Engage Management <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-road"></i>
+            </div>
+            <h3>Highways & Urban Infrastructure</h3>
+            <p>
+              Asphalt paving, concrete drainage channels, culvert engineering,
+              and stormwater control systems.
+            </p>
+            <a href="#rfp" class="service-link"
+              >Learn More <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FEATURED PROJECTS GALLERY -->
+    <section class="projects-section section-padding" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Track Record</span>
+          <h2>Featured Portfolio Projects</h2>
+          <p>
+            Explore a selection of our recent commercial complexes, industrial
+            facilities, and civil infrastructure developments.
+          </p>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="commercial">
+            Commercial
+          </button>
+          <button class="filter-btn" data-filter="civil">
+            Civil Engineering
+          </button>
+          <button class="filter-btn" data-filter="industrial">
+            Industrial
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div
+            class="project-card"
+            data-category="commercial"
+            onclick="
+              openProjectModal(
+                'Pinnacle Commercial Tower',
+                'Abuja CBD',
+                '14-Storey Post-Tensioned Structure',
+                '18 Months',
+                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+              )
+            ">
+            <div class="project-image-box">
+              <span class="project-category-tag">Commercial</span>
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                alt="Pinnacle Commercial Tower" />
+            </div>
+            <div class="project-details">
+              <h3>Pinnacle Financial Headquarters</h3>
+              <div class="project-location">
+                <i class="fa-solid fa-location-dot"></i> Central Business
+                District, Abuja
+              </div>
+              <div class="project-stats">
+                <span>Type: <strong>14-Storey Tower</strong></span>
+                <span>Timeline: <strong>18 Months</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-card"
+            data-category="civil"
+            onclick="
+              openProjectModal(
+                'Lekki Flyover & Drainage Network',
+                'Lagos',
+                '3.2km Reinforced Dual Carriage Viaduct',
+                '24 Months',
+                'https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=800&q=80',
+              )
+            ">
+            <div class="project-image-box">
+              <span class="project-category-tag">Civil</span>
+              <img
+                src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=800&q=80"
+                alt="Lekki Flyover" />
+            </div>
+            <div class="project-details">
+              <h3>Lekki Infrastructure & Drainage</h3>
+              <div class="project-location">
+                <i class="fa-solid fa-location-dot"></i> Lekki Phase I, Lagos
+              </div>
+              <div class="project-stats">
+                <span>Type: <strong>3.2km Viaduct</strong></span>
+                <span>Timeline: <strong>24 Months</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-card"
+            data-category="industrial"
+            onclick="
+              openProjectModal(
+                'Eko Industrial Logistics Hub',
+                'Epe, Lagos',
+                'Heavy Steel Span Warehouse & Power Substation',
+                '12 Months',
+                'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80',
+              )
+            ">
+            <div class="project-image-box">
+              <span class="project-category-tag">Industrial</span>
+              <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"
+                alt="Industrial Logistics Hub" />
+            </div>
+            <div class="project-details">
+              <h3>Eko Heavy Manufacturing Hub</h3>
+              <div class="project-location">
+                <i class="fa-solid fa-location-dot"></i> Epe Industrial Zone,
+                Lagos
+              </div>
+              <div class="project-stats">
+                <span>Type: <strong>Steel Span Facility</strong></span>
+                <span>Timeline: <strong>12 Months</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="project-card"
+            data-category="commercial"
+            onclick="
+              openProjectModal(
+                'Oceanview Luxury Apartments',
+                'Victoria Island',
+                'Twin-Block Luxury Residential High-Rise',
+                '20 Months',
+                'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
+              )
+            ">
+            <div class="project-image-box">
+              <span class="project-category-tag">Commercial</span>
+              <img
+                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
+                alt="Oceanview Apartments" />
+            </div>
+            <div class="project-details">
+              <h3>Oceanview Executive Residences</h3>
+              <div class="project-location">
+                <i class="fa-solid fa-location-dot"></i> Victoria Island, Lagos
+              </div>
+              <div class="project-stats">
+                <span>Type: <strong>Twin-Block Tower</strong></span>
+                <span>Timeline: <strong>20 Months</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="project-card"
+            data-category="civil"
+            onclick="
+              openProjectModal(
+                'Rivers State Highway Bypass',
+                'Port Harcourt',
+                '18km Dual Carriageway with Box Culverts',
+                '14 Months',
+                'https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=800&q=80',
+              )
+            ">
+            <div class="project-image-box">
+              <span class="project-category-tag">Civil</span>
+              <img
+                src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=800&q=80"
+                alt="Highway Construction" />
+            </div>
+            <div class="project-details">
+              <h3>Port Harcourt Highway Bypass</h3>
+              <div class="project-location">
+                <i class="fa-solid fa-location-dot"></i> Port Harcourt, Rivers
+                State
+              </div>
+              <div class="project-stats">
+                <span>Type: <strong>18km Expressway</strong></span>
+                <span>Timeline: <strong>14 Months</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="project-card"
+            data-category="industrial"
+            onclick="
+              openProjectModal(
+                'Dangote Fertilizer Plant Expansion',
+                'Lekki Free Zone',
+                'Heavy Foundation Foundations for Chemical Processing Units',
+                '16 Months',
+                'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+              )
+            ">
+            <div class="project-image-box">
+              <span class="project-category-tag">Industrial</span>
+              <img
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+                alt="Industrial Plant Expansion" />
+            </div>
+            <div class="project-details">
+              <h3>Refinery Infrastructure Expansion</h3>
+              <div class="project-location">
+                <i class="fa-solid fa-location-dot"></i> Lekki Free Trade Zone
+              </div>
+              <div class="project-stats">
+                <span>Type: <strong>Heavy Foundation</strong></span>
+                <span>Timeline: <strong>16 Months</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. EXECUTION PROCESS TIMELINE -->
+    <section class="process-section section-padding" id="process">
+      <div class="container">
+        <div class="section-header">
+          <span
+            class="badge"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              color: var(--accent-amber);
+              border-color: rgba(245, 158, 11, 0.3);
+            "
+            >How We Work</span
+          >
+          <h2>Standard Engineering Workflow</h2>
+          <p>
+            A disciplined 5-stage project execution framework ensuring safety,
+            budget compliance, and structural integrity.
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <!-- Step 1 -->
+          <div class="process-card">
+            <div class="step-number">01</div>
+            <h3>Site Survey & Geotechnical</h3>
+            <p>
+              Topographical mapping, soil bearing tests, structural auditing,
+              and environmental impact assessment.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-card">
+            <div class="step-number">02</div>
+            <h3>Structural Design & CAD</h3>
+            <p>
+              BIM 3D modeling, load calculation sheets, MEP drawings, and
+              statutory regulatory approvals.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-card">
+            <div class="step-number">03</div>
+            <h3>Procurement & Mobilization</h3>
+            <p>
+              Sourcing certified steel and high-grade concrete, heavy machinery
+              mobilization, and site HSE setup.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-card">
+            <div class="step-number">04</div>
+            <h3>Execution & Quality Control</h3>
+            <p>
+              Phase-by-phase construction with ongoing cube testing, slump
+              testing, and client site reporting.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="process-card">
+            <div class="step-number">05</div>
+            <h3>Commissioning & Handover</h3>
+            <p>
+              Final structural testing, MEP system commissioning, snag list
+              clearance, and practical completion handover.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONSULTATION & RFP FORM -->
+    <section class="rfp-section section-padding" id="rfp">
+      <div class="container">
+        <div class="rfp-grid">
+          <div class="rfp-info">
+            <span class="badge">Partner With Us</span>
+            <h2>Have a Project or Tender to Submit?</h2>
+            <p>
+              Fill out our Request for Proposal (RFP) form to consult directly
+              with our Chief Structural Engineer and project estimators.
+            </p>
+
+            <div class="info-list">
+              <div class="info-item">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                  <h4>Direct Estimations Line</h4>
+                  <p>+234 (0) 800 2739 28453</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-file-pdf"></i>
+                <div>
+                  <h4>Submit Architectural Drawings</h4>
+                  <p>rfp@apexstructure.com</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                  <h4>Turnaround Time</h4>
+                  <p>
+                    Detailed cost proposals generated within 5 working days.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rfp-form-card">
+            <form id="rfpForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-group-grid">
+                <div class="form-group">
+                  <label for="fullName">Full Name / Corporate Entity</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    class="form-control"
+                    placeholder="e.g. Dangote Group / John Doe"
+                    required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Official Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="name@company.com"
+                    required />
+                </div>
+              </div>
+
+              <div class="form-group-grid">
+                <div class="form-group">
+                  <label for="projectType">Project Category</label>
+                  <select id="projectType" class="form-control" required>
+                    <option value="" disabled selected>
+                      Select Project Type
+                    </option>
+                    <option value="commercial">
+                      Commercial High-Rise Construction
+                    </option>
+                    <option value="civil">
+                      Civil Highway & Bridge Infrastructure
+                    </option>
+                    <option value="audit">Structural Assessment & Audit</option>
+                    <option value="industrial">
+                      Industrial Warehouse / Plant
+                    </option>
+                    <option value="consulting">
+                      Engineering Design & Supervision
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget">Estimated Budget Range</label>
+                  <select id="budget" class="form-control" required>
+                    <option value="" disabled selected>Select Budget</option>
+                    <option value="50m-200m">₦50M - ₦200M</option>
+                    <option value="200m-1b">₦200M - ₦1 Billion</option>
+                    <option value="1b+">₦1 Billion +</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="location">Site Location</label>
+                <input
+                  type="text"
+                  id="location"
+                  class="form-control"
+                  placeholder="State / City / Local Govt Area"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label for="description">Brief Scope of Work</label>
+                <textarea
+                  id="description"
+                  class="form-control"
+                  placeholder="Mention total floors, land size, timeline targets, or design specs..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                <i class="fa-solid fa-paper-plane"></i> Submit Proposal Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <i class="fa-solid fa-cubes-stacked"></i> APEX STRUCTURE
+            </a>
+            <p>
+              Apex Structure Ltd is a premier civil and structural engineering
+              procurement company delivering safe, long-lasting infrastructure.
+            </p>
+            <div class="compliance-box">
+              <strong style="color: var(--accent-amber); font-size: 0.88rem"
+                ><i class="fa-solid fa-shield-check"></i> Statutory Regulatory
+                Compliance</strong
+              >
+              <p>
+                Registered and practicing under COREN (Council for the
+                Regulation of Engineering in Nigeria) & Nigerian Society of
+                Engineers (NSE).
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Quick Links</h4>
+            <div class="footer-links">
+              <a href="#about">About Apex Structure</a>
+              <a href="#services">Core Capabilities</a>
+              <a href="#projects">Project Portfolio</a>
+              <a href="#process">Execution Standards</a>
+              <a href="#rfp">Request RFP</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Engineering Services</h4>
+            <div class="footer-links">
+              <a href="#services">High-Rise Buildings</a>
+              <a href="#services">Geotechnical Surveys</a>
+              <a href="#services">Bridge & Flyover Works</a>
+              <a href="#services">Structural Retrofitting</a>
+              <a href="#services">MEP Engineering</a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Head Office</h4>
+            <p style="margin-bottom: 12px">
+              <i
+                class="fa-solid fa-location-dot"
+                style="color: var(--accent-amber)"></i>
+              Plot 452, Central Business District, Abuja, FCT, Nigeria
+            </p>
+            <p style="margin-bottom: 12px">
+              <i
+                class="fa-solid fa-phone"
+                style="color: var(--accent-amber)"></i>
+              +234 (0) 800 2739 28453
+            </p>
+            <p>
+              <i
+                class="fa-solid fa-envelope"
+                style="color: var(--accent-amber)"></i>
+              info@apexstructure.com
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2026 Apex Structure Ltd. All Rights Reserved.</div>
+          <div style="display: flex; gap: 20px">
+            <a href="#">Privacy Policy</a>
+            <a href="#">HSE Policy Statement</a>
+            <a href="#">COREN Certification</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- PROJECT MODAL PREVIEW -->
+    <div class="modal-overlay" id="projectModal">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeProjectModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-body">
+          <img id="modalImg" src="" alt="Project Image Preview" />
+          <h2 id="modalTitle" style="margin-bottom: 8px">Project Title</h2>
+          <div
+            id="modalLocation"
+            style="
+              color: var(--text-muted);
+              font-size: 0.95rem;
+              margin-bottom: 15px;
+            ">
+            <i class="fa-solid fa-location-dot"></i> Location
+          </div>
+          <p
+            id="modalScope"
+            style="color: var(--text-main); margin-bottom: 20px">
+            Detailed project scope description will go here.
+          </p>
+
+          <div
+            style="
+              background: var(--bg-main);
+              padding: 15px;
+              border-radius: var(--radius-md);
+              display: flex;
+              justify-content: space-between;
+            ">
+            <span
+              >Execution Duration:
+              <strong id="modalTimeline">18 Months</strong></span
+            >
+            <a
+              href="#rfp"
+              onclick="closeProjectModal()"
+              style="color: var(--accent-amber-hover); font-weight: 700"
+              >Inquire Similar Build &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div class="toast-msg" id="toast">
+      <i
+        class="fa-solid fa-circle-check"
+        style="color: var(--accent-amber); margin-right: 8px"></i>
+      Proposal Request Submitted Successfully! Our Lead Estimator will contact
+      you.
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
