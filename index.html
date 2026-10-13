@@ -241,6 +241,11 @@
         padding: 16px 15px;
       }
 
+      .logo-container {
+        display: flex;
+        flex-direction: column;
+      }
+
       .logo {
         display: flex;
         align-items: center;
@@ -1146,12 +1151,22 @@
     <!-- NAVIGATION HEADER -->
     <header class="header-nav">
       <div class="container">
-        <a href="#" class="logo">
-          <i class="fa-solid fa-cubes-stacked"></i>
-          TACAP
-          <p style="color: red; size: 4px">Engineering solutions ltd</p>
-        </a>
-
+        <div class="logo-container">
+          <a href="#" class="logo">
+            <i class="fa-solid fa-cubes-stacked"></i>
+            TACAP
+          </a>
+          <p
+            style="
+              color: red;
+              font-size: 0.5rem;
+              font-weight: bold;
+              margin-left: 1rem;
+            "
+            class="Engr-logo">
+            Engineering solutions ltd
+          </p>
+        </div>
         <div class="mobile-toggle" id="mobileToggle">
           <i class="fa-solid fa-bars"></i>
         </div>
